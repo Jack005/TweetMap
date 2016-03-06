@@ -51,7 +51,6 @@ class StdOutListener(StreamListener):
                     coord2 = (place["bounding_box"]["coordinates"][0][0][1] + place["bounding_box"]["coordinates"][0][2][1])/2
                     dic['fields'] = {'coordinates':[str(coord1),str(coord2)],
                                     'text':text}
-                    append_record(dic)
                     doc_service.add(dic['id'],  dic['fields'])
                     doc_service.commit()
 
